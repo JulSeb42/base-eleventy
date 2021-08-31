@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }} | {{ site.title }}</title>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description"
+            content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="author" content="{{ site.author }}" />
+        <meta property="og:title" content="{{ title }} | {{ site.title }}" />
+        <meta property="og:type" content="{{ site.type }}" />
+        <meta property="og:url" content="{{ site.url }}/{{ url }}" />
+        <meta property="og:image"
+            content="/images/{% if ogCover %}{{ ogCover }}{% else %}{{ site.ogCover }}{% endif %}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:locale" content="{{ site.lang }}_{{ site.lang | upcase }}" />
+        <meta name="generator" content="Eleventy v0.12.1" />
+        <!-- Website Language (see here https://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes) -->
+        <link href="/images/{{ site.favicon }}" rel="shortcut icon" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.min.css" />
+
+        <!-- JS -->
+    </head>
+
+    <body>
+        {% include header.html %}
+        
+        {{ content }}
+        <!-- JS -->
+    </body>
+</html>
