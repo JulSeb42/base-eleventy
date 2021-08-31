@@ -3,4 +3,6 @@ title: Home
 layout: default
 ---
 
-## Prout
+# {{ title }}
+
+<img src="/images/icons/american-express-card.svg" class="icon">
