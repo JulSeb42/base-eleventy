@@ -24,6 +24,19 @@ module.exports = function (eleventyConfig) {
             .sort((a, b) => a.data.order - b.data.order)
     })
 
+    // Shortcodes
+    eleventyConfig.addShortcode("user", function (firstName, lastName) {
+        return `<p>Hi, I'm ${firstName} ${lastName}!</p>`
+    })
+
+    // Shortcodes with open and close tags => always put content inside the tags first
+    eleventyConfig.addPairedShortcode("code", function (content, lang, name) {
+        return `<pre>
+<code class="${lang}">${content}</code>
+</pre>
+${name}`
+    })
+
     return {
         passthroughFileCopy: true,
 
